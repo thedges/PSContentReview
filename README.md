@@ -28,16 +28,11 @@ While you can drop this component on a Lightning Page, it makes most sense to us
 
 # Setup Instructions
 Here are steps to setup and configure this component:
-  * Install the component per the "Deploy to Salesforce" button below. Make sure to install dependent packages first as noted below.
-  * Create a custom object in your demo org where you will store your inspection results. 
-    - Create fields to store values the inspector will enter for each photo inspection. 
-    - Create a Lookup or Master-Detail relationship field to the primary object (i.e. parent object) you will execute inspections from. This could be a standard or custom object.
-  * On the parent object, create a Quick Action and provide whatever Label, Name and Icon that makes sense to your scenario. Select the "PSPhotoInspectionAction" Lightning Component for the Quick Action configuration.
-  * Go to <b>Setup > Custom Code > Custom Metadata Types</b>
-    - Click <b>Manage Records</b> next to "PSPhotoInspection" metadata entry in list
-    - Click <b>New</b> button to create a new metadata configuration. 
-    - See above for field definitions and example screenshot. Make sure to specify either the "Parent Object" or combination or "Parent Object" and "Profile".
-  * That is it...now use the Quick Action in Salesforce Mobile (or you can access from desktop app)
+  * Install the component per the "Deploy to Salesforce" button below. 
+    - If installing the quick action (see above), add the quick action to your record page layout.
+    - Else you can drag the PSContentRecord Lightning Component on a record page...on the main page, in a tab, etc... This component wants a wide amount of screen area so quick action may be best choice.
+  * If you are using the component directly on a page, configure the component properties: Height, Columns, EditFields, Content Parent Field
+  * That is it...now use either the Quick Action or Lightning Component depending on your choice of setup.
 
 # Installation Instructions
 Click below button to install this package:
