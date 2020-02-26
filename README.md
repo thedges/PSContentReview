@@ -11,7 +11,7 @@ This component works in following way:
 * Document navigation can be done by drop-down list to view a specific document or left/right arrow buttons to sequentially move through the documents.
 * Once the record has been updated, the modal can be closed and you are placed back on the original record.
 
-Here are the configuration options:
+Here are the configuration options for the component:
 
 | Parameter  | Definition |
 | ------------- | ------------- |
@@ -22,10 +22,28 @@ Here are the configuration options:
 
 
 # Quick Action Setup
-While you can drop this component on a Lightning Page, it makes most sense to use it as a Quick Action in Salesforce Mobile. One issue with Quick Actions is that you cannot configure them declaratively like you can when dropping a component on a page. To allow some dynamic configuration, I created a Custom Metadata type called "PSPhotoInspection" to store configuration parameters that the component will read a runtime to configure itself. You have two fields to specify which configuration setting gets applied:
-* Specify a single configuration for a given target object (i.e. same PSPhotoInspection config gets applied to every Case record)
-* Specify a configuration at a user profile level for a given target object (i.e. apply a specific PSPhotoInspection config for users in a specific profile accessing the component on a specified object like Case)
+As shown in the video, this component is probably best used as a quick action. The gotcha is that quick actions do not provide an option to configure the component for your needs. So...one must create a simple Aura Lightning Component wrapper around the main Lightning Web Component (quick actions currently only support Aura components). In this Aura wrapper is where you provide your component configuration parameters. 
 
+In Developer Console, create an Aura Lightning Component and provide it whatever name that makes sense for your use case. In the component's ".cmp" file, enter code like the following:
+```
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="String" />
+
+    <aura:html tag="style">
+        .slds-modal__container{
+        height : auto;
+        width: 90%;
+        max-width: 90%;
+        }
+    </aura:html>
+
+    <c:psContentRecord recordId="{!v.recordId}" 
+        height="920px" 
+        columns="1" 
+        contentParentField="Contact__r.AccountId"
+        editFields="PaymentStatus__c,Amount__c,Program_Prescription__c,Contact__c,Program_Explanation__c"></c:psContentRecord>
+</aura:component>
+```
 # Setup Instructions
 Here are steps to setup and configure this component:
   * Install the component per the "Deploy to Salesforce" button below. 
