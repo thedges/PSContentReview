@@ -44,6 +44,9 @@ In Developer Console, create an Aura Lightning Component and provide it whatever
         editFields="PaymentStatus__c,Amount__c,Program_Prescription__c,Contact__c,Program_Explanation__c"></c:psContentRecord>
 </aura:component>
 ```
+
+The only areas you need to address are near the bottom where you provide __height__, __columns__, __contentParentField__, and __editFields__ values. Reminder that only __height__ and __columns__ are required.
+
 # Setup Instructions
 Here are steps to setup and configure this component:
   * Install the component per the "Deploy to Salesforce" button below. 
