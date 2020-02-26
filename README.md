@@ -45,7 +45,13 @@ In Developer Console, create an Aura Lightning Component and provide it whatever
 </aura:component>
 ```
 
-The only areas you need to address are near the bottom where you provide __height__, __columns__, __contentParentField__, and __editFields__ values. Reminder that only __height__ and __columns__ are required.
+The only areas you need to adjust/edit are near the bottom where you provide __height__, __columns__, __contentParentField__, and __editFields__ values. Reminder that only __height__ and __columns__ are required.
+
+Once the Aura component above is created and saved, next create a Quick Action on the object you will use the quick action on. Here is example of Quick Action configuration screen
+
+![alt text](https://github.com/thedges/PSContentReview/blob/master/PSContentReviewQA.gif "PSContentReviewQA")
+
+Lastly, add the Quick Action to your record page layout.
 
 # Setup Instructions
 Here are steps to setup and configure this component:
