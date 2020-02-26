@@ -49,7 +49,7 @@ The only areas you need to adjust/edit are near the bottom where you provide __h
 
 Once the Aura component above is created and saved, next create a Quick Action on the object you will use the quick action on. Here is example of Quick Action configuration screen
 
-![alt text](https://github.com/thedges/PSContentReview/blob/master/PSContentReviewQA.gif "PSContentReviewQA")
+![alt text](https://github.com/thedges/PSContentReview/blob/master/PSContentReviewQA.png "PSContentReviewQA")
 
 Lastly, add the Quick Action to your record page layout.
 
