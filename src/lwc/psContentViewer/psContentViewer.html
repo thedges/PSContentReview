@@ -1,0 +1,23 @@
+<template>
+    <div class="wrapper" style={heightStyle}>
+        <div class="slds-grid slds-gutters slds-p-around_small">
+            <div class="slds-col">
+                <lightning-combobox name="progress" label="Status" value={docId} variant="label-hidden"
+                    placeholder="Select File" options={content} onchange={handleFileChange}></lightning-combobox>
+            </div>
+            <div class="slds-col" style="text-align: right">
+                <lightning-icon icon-name="utility:left" alternative-text="Left" title="Left" onclick={onLeftClick}></lightning-icon>
+                <span>{currIndex}/{totalCount}</span>
+                <lightning-icon icon-name="utility:right" alternative-text="Right" title="Right" onclick={onRightClick}></lightning-icon>
+            </div>
+        </div>
+        <div class="contentDiv slds-p-left_small slds-p-right_small slds-p-bottom_small">
+            <template if:true={typeOfDocument}>
+                <iframe class="frame" src={docURL}></iframe>
+            </template>
+            <template if:true={typeOfImage}>
+                <img src={docURL} width="100%"></img>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,23 @@
+<template>
+    <div style="width: 100%;" class="slds-card">
+        <template if:true={objectName}>
+            <div class="slds-grid">
+                <div class="slds-col slds-size_5-of-12">
+                    <c-ps-content-record-edit record-id={recordId} edit-fields={editFields} height={height}
+                        columns={columns} object-name={objectName}></c-ps-content-record-edit>
+                </div>
+                <div class="slds-col slds-size_7-of-12">
+                    <c-ps-content-viewer record-id={contentParentId} height={height}></c-ps-content-viewer>
+                </div>
+            </div>
+        </template>
+        <!--
+        <div style="width: 40%; height: 700px; float: left; " >
+           <c-ps-content-record-edit record-id={recordId}></c-ps-content-record-edit>
+        </div>
+        <div style="margin-left: 40%; height: 700px; overflow-y:hidden;">
+            <c-ps-content-viewer record-id={recordId}></c-ps-content-viewer>
+        </div>
+        -->
+    </div>
+</template>

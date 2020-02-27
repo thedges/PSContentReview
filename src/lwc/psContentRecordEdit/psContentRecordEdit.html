@@ -1,0 +1,16 @@
+<template>
+    <div class="wrapper" style={heightStyle}>
+        <div class="slds-p-around_small">
+            <template if:true={fieldsDefined}>
+                <lightning-record-form record-id={recordId} object-api-name={objectName} columns={columns}
+                    fields={fields} mode="edit">
+                </lightning-record-form>
+            </template>
+            <template if:true={fieldsNotDefined}>
+                <lightning-record-form record-id={recordId} object-api-name={objectName} columns={columns}
+                    layout-type="Full" mode="edit">
+                </lightning-record-form>
+            </template>
+        </div>
+    </div>
+</template>

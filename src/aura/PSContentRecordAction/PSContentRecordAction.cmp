@@ -1,0 +1,17 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="String" />
+
+    <aura:html tag="style">
+        .slds-modal__container{
+        height : auto;
+        width: 90%;
+        max-width: 90%;
+        }
+    </aura:html>
+
+    <c:psContentRecord recordId="{!v.recordId}" 
+        height="920px" 
+        columns="1" 
+        contentParentField="Contact__r.AccountId"
+        editFelds="PaymentStatus__c,Amount__c,Start_Date__c,Contact__c,Program_Prescription__c"></c:psContentRecord>
+</aura:component>
