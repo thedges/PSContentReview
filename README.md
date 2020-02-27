@@ -17,7 +17,7 @@ Here are the configuration options for the component:
 | ------------- | ------------- |
 | Height  | The height (in pixels) of the component.  |
 | Columns  | Number of columns for the fields to show in left-side record edit form. |
-| Edit Fields  | [Optional] A command separated list of field API names to show in the record edit form. |
+| Edit Fields  | [Optional] A comma separated list of field API names to show in the record edit form. |
 | Content Parent Field  | [Optional] The API name of the field that stores the record to show all related content documents. If left blank, it defaults to the current record. You can provide a value that references a field on a parent related record (for example: if you are on case record and you want to reference account documents, you could put "Contact.AccountId" as the value and it will pull all documents related to the Account. |
 
 
