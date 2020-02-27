@@ -45,7 +45,7 @@ In Developer Console, create an Aura Lightning Component and provide it whatever
 </aura:component>
 ```
 
-The only areas you need to adjust/edit are near the bottom where you provide __height__, __columns__, __contentParentField__, and __editFields__ values. Reminder that only __height__ and __columns__ are required.
+The only areas you need to adjust/edit are near the bottom where you provide __height__, __columns__, __contentParentField__, and __editFields__ values. Reminder that only __height__ and __columns__ are required. For the height, you will need to tweak the height value you provide in the Aura Component versus the value you provide in the Quick Action definition. Having the Aura component value about XX less than Quick Action value seems to work best.
 
 Once the Aura component above is created and saved, next create a Quick Action on the object you will use the quick action on. Here is example of Quick Action configuration screen
 
