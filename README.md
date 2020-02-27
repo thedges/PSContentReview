@@ -54,7 +54,7 @@ Once the Aura component above is created and saved, next create a Quick Action o
 Lastly, add the Quick Action to your record page layout.
 
 # Component Limitations
-First, the left-hand form edit capability is based on the [lightning-record-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form/documentation) Lightning Web Component. This component can work in 2-modes for showing the fields in the form:
+First, the left-hand form edit capability is based on the [lightning-record-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form/documentation) Lightning Web Component so is limited by the capabilities of that standard LWC. This component can work in 2-modes for showing the fields in the form:
   * First is full layout which will show all fields in the default page layout for the record. The fields are shown in the order they are defined in the page layout; however, it does not show sections as defined in the page layout. If you want sections, that is a custom form edit effort. This mode is used if you leave the __editFields__ paramater blank.
   * If CSV list of field API names are provided for the __editFields__ parameter, those fields will be shown in the provided order in the form. Like above, no section breakdown can be specified.
 
