@@ -22,7 +22,7 @@ export default class PsContentViewer extends LightningElement {
   }
 
   isImage(docType) {
-    return (docType == 'JPG' || docType == 'PNG' || docType == 'TIFF' || docType == 'TIF' || docType == 'GIF') ? true : false;
+    return (docType == 'JPG' || docType == 'JPEG' || docType == 'PNG' || docType == 'TIFF' || docType == 'TIF' || docType == 'GIF') ? true : false;
   }
 
   connectedCallback () {
