@@ -53,6 +53,11 @@ Once the Aura component above is created and saved, next create a Quick Action o
 
 Lastly, add the Quick Action to your record page layout.
 
+# Component Limitations
+First, the left-hand form edit capability is based on the [lightning-record-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form/documentation) Lightning Web Component.
+
+Second, the component depends on either built-in browser features or browser plugins/extensions to show various document types. The original requirement for the component was to support PDF and TIFF file formats.
+
 # Setup Instructions
 Here are steps to setup and configure this component:
   * Install the component per the "Deploy to Salesforce" button below. 
