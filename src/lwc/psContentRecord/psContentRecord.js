@@ -1,4 +1,4 @@
-import {LightningElement, api} from 'lwc';
+import {LightningElement, api, track} from 'lwc';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 import getRecordInfo
   from '@salesforce/apex/PSContentRecordController.getRecordInfo';
@@ -9,8 +9,11 @@ export default class PsContentRecord extends LightningElement {
   @api editFields;
   @api height = '700px';
   @api columns = 1;
-  objectName;
+  @api objectName;
+  @track ready = false;
   contentParentId;
+  recordTypeId;
+
 
   connectedCallback () {
     var self = this;
@@ -19,16 +22,25 @@ export default class PsContentRecord extends LightningElement {
 
     console.log('contentParentField=' + this.contentParentField);
 
+    if (this.recordId != null)
+    {
     getRecordInfo ({recordId: self.recordId, contentParentField: this.contentParentField})
       .then (result => {
         console.log ('recordInfo=' + result);
         var recDetails = JSON.parse(result);
-        self.contentParentId = recDetails.contentParentId; 
         self.objectName = recDetails.objectName; 
+        self.recordTypeId = recDetails.recordTypeId; 
+        self.contentParentId = recDetails.contentParentId; 
+        self.ready = true;
       })
       .catch (error => {
         self.handleError (error);
       });
+    }
+  }
+
+  renderedCallback () {
+      console.log('renderedCallback...');
   }
 
   handleError (err) {

@@ -3,9 +3,16 @@
     <apiVersion>47.0</apiVersion>
     <isExposed>true</isExposed>
     <targets>
+        <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>
     </targets>
     <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property name="height" type="String" label="Height"/>
+            <property name="columns" type="String" label="Number of Columns"/>
+            <property name="editFields" type="String" label="Edit Fields (CSV)"/>
+            <property name="contentParentField" type="String" label="Parent Record ID of Content"/>
+        </targetConfig>
         <targetConfig targets="lightning__RecordPage">
             <property name="height" type="String" label="Height"/>
             <property name="columns" type="String" label="Number of Columns"/>

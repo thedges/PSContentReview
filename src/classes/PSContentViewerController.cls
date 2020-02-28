@@ -3,6 +3,7 @@ public without sharing class PSContentViewerController {
     public static String getRecordContent(String recordId)
     {
         List<Map<String, Object>> contList = new List<Map<String, Object>>();
+        System.debug('recordId=' + recordId);
 
         for (ContentDocumentLink cdl : [SELECT ContentDocumentId, ContentDocument.Title, ContentDocument.PublishStatus,
                                            ContentDocument.FileType, ContentDocument.FileExtension, ContentDocument.ContentSize,

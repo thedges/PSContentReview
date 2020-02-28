@@ -1,5 +1,6 @@
-<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global">
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,lightning:actionOverride,force:hasSObjectName" access="global">
     <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="sObjectName" type="String" />
 
     <aura:html tag="style">
         .slds-modal__container{
@@ -13,5 +14,6 @@
         height="920px" 
         columns="1" 
         contentParentField="Contact__r.AccountId"
+        objectName="{!v.sObjectName}"
         editFelds="PaymentStatus__c,Amount__c,Start_Date__c,Contact__c,Program_Prescription__c"></c:psContentRecord>
 </aura:component>

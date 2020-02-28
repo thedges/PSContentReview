@@ -6,6 +6,7 @@ export default class PsContentRecordEdit extends LightningElement {
     @api editFields;
     @api columns;
     @api objectName;
+    @api recordTypeId;
     fields;
 
     connectedCallback () {
