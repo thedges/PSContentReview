@@ -68,6 +68,12 @@ export default class PsContentViewer extends LightningElement {
     }
   }
 
+  onFlipClick () {
+    console.log ('on flip click...');
+    const flipEvent = new CustomEvent('flip', {});
+    this.dispatchEvent(flipEvent);
+  }
+
   setIndex(targetIndex) {
     var self = this;
 

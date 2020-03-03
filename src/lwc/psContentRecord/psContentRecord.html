@@ -2,13 +2,24 @@
     <div style="width: 100%;" class="slds-card">
         <template if:true={ready}>
             <div class="slds-grid">
-                <div class="slds-col slds-size_5-of-12">
+                <template if:true={contentRight}>
+                  <div class="slds-col slds-size_5-of-12">
                     <c-ps-content-record-edit record-id={recordId} edit-fields={editFields} height={height}
                         columns={columns} object-name={objectName} record-type-id={recordTypeId}></c-ps-content-record-edit>
-                </div>
-                <div class="slds-col slds-size_7-of-12">
-                    <c-ps-content-viewer record-id={contentParentId} height={height}></c-ps-content-viewer>
-                </div>
+                  </div>
+                  <div class="slds-col slds-size_7-of-12">
+                    <c-ps-content-viewer record-id={contentParentId} height={height} onflip={flipContent}></c-ps-content-viewer>
+                  </div>
+                </template>
+                <template if:true={contentLeft}>
+                    <div class="slds-col slds-size_7-of-12">
+                      <c-ps-content-viewer record-id={contentParentId} height={height} onflip={flipContent}></c-ps-content-viewer>
+                    </div>
+                    <div class="slds-col slds-size_5-of-12">
+                        <c-ps-content-record-edit record-id={recordId} edit-fields={editFields} height={height}
+                            columns={columns} object-name={objectName} record-type-id={recordTypeId}></c-ps-content-record-edit>
+                      </div>
+                </template>
             </div>
         </template>
         <!--

@@ -11,12 +11,27 @@ export default class PsContentRecord extends LightningElement {
   @api columns = 1;
   @api objectName;
   @track ready = false;
+  @api contentSide = 'Right';
   contentParentId;
   recordTypeId;
 
+  get contentRight() {
+    return (this.contentSide == 'Right' ? true : false);
+  }
+
+  get contentLeft() {
+    return (this.contentSide == 'Left' ? true : false);
+  }
 
   connectedCallback () {
     var self = this;
+
+    var side = this.retrieveContentSide();
+    console.log('side=' + side);
+    if (side != null)
+    {
+      this.contentSide = side;
+    }
 
     if (!this.height.includes ('px')) this.height = this.height + 'px';
 
@@ -37,6 +52,30 @@ export default class PsContentRecord extends LightningElement {
         self.handleError (error);
       });
     }
+  }
+
+  storeContentSide(side) {
+    localStorage.setItem('flipSide', side);
+  }
+
+  retrieveContentSide() {
+    var side = localStorage.getItem('flipSide');
+    return side;
+  }
+
+  flipContent(event) {
+    console.log('flip event received');
+    if (this.contentSide == 'Right')
+    {
+      this.contentSide = 'Left';
+
+    }
+    else
+    {
+      this.contentSide = 'Right';
+    }
+
+    this.storeContentSide(this.contentSide);
   }
 
   renderedCallback () {

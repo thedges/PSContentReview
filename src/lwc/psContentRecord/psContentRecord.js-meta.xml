@@ -18,6 +18,7 @@
             <property name="columns" type="String" label="Number of Columns"/>
             <property name="editFields" type="String" label="Edit Fields (CSV)"/>
             <property name="contentParentField" type="String" label="Parent Record ID of Content"/>
+            <property name="contentSide"  type="String" datasource="Right,Left" />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
