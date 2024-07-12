@@ -15,5 +15,6 @@
         columns="1" 
         contentParentField="Contact__r.AccountId"
         objectName="{!v.sObjectName}"
-        editFelds="PaymentStatus__c,Amount__c,Start_Date__c,Contact__c,Program_Prescription__c"></c:psContentRecord>
+     editFields="PaymentStatus__c,Amount__c,Start_Date__c,Contact__c,Program_Prescription__c">
+</c:psContentRecord>
 </aura:component>
